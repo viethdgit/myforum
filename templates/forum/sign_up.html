@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sign Up</title>
+</head>
+<body>
+<body>
+<h1>SIGN UP</h1><br>
+{% if not creat_user %}
+<form method='POST' action="">
+	{% csrf_token %}
+   User:
+  <input type="text" name="username">
+  <br>
+  Pass:
+  <input type="password" name="password">
+	<br><br>
+
+  <button type="submit" name="login">Submit</button>
+</form>
+<br>
+
+{% if invalid_user %}
+	Invalid user!!
+	{% endif %}
+{% if usr_exist %}
+	User existing!
+{% endif %}
+{% endif %}
+{% if creat_user %}
+	Create user {{ usr }} <br>
+<form action="main_page.html">
+    <button type="submit" >Back to main page</button>
+</form>
+{% endif %}
+</body>
+</html>

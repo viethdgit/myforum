@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Create new thread</title>
+</head>
+<body>
+<h1>Create new thread</h1>
+
+	<form method='POST' action="">
+		{% csrf_token %}
+		Subject   : <input type="text" name="subject" size="60"><br>
+		<br>
+		Message: <br><textarea name = "message" rows="10" cols="100" ></textarea>
+		<input type="submit" value="Submit">
+	</form>
+
+</body>
+</html>

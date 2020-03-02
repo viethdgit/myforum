@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Forum</title>
+</head>
+<body>
+Hello <b>{{usr}}</b>
+{% if not  guest %}
+	<form action="logout.html">
+    <button type="submit" >Logout</button>
+</form><br>
+<form action="chatbox.html">
+    <button type="submit" >Chat box</button>
+</form>
+<form action="new_thread.html">
+    <button type="submit" >Create new thread</button>
+</form>
+
+{% endif %}
+{% if guest %}
+	<form action="login.html">
+    <button type="submit" >Login</button>
+</form>
+		<form action="sign_up.html">
+    <button type="submit" >Sign_up</button>
+</form>
+{% endif %}
+<hr /><br>
+
+{% for k in list_thread %}
+	<a href="thread_id={{ k.0 }}">{{ k.2 }}</a>   by {{ k.1 }}<br>
+{% endfor %}
+
+</body>
+</html>

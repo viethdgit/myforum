@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Live chat</title>
+</head>
+<body>
+{% if usr %}
+<iframe id="myiframe" onLoad="scrollToBottom()" src="/forum/chat_content.html" width="100%" height="600"></iframe>
+</iframe>
+<form method='POST' action="">
+	{% csrf_token %}
+   Chat:
+  <input type="text" name="chat">
+
+  <button type="submit" name="login">Submit</button>
+</form>
+<br>
+<script>
+function scrollToBottom() {
+	document.getElementById("myiframe").contentWindow.scrollTo(0,document.getElementById("myiframe").contentWindow.document.body.scrollHeight)
+}
+</script>
+{% endif %}
+
+{% if not usr %}
+You dont have permission to view this page!
+	<form action="main_page.html">
+    <button type="submit" >Back to main page</button>
+</form>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Thread</title>
+</head>
+<body>
+<h3>Subject   : {{ thread_content.1 }}</h3> by {{ thread_content.0 }}
+<hr /><br>
+{{ thread_content.2 }}
+<br><br>
+
+<hr />
+{% if thread_cmt %}
+	{% for k in thread_cmt %}
+		<b>{{ k.0 }}</b>: {{ k.1 }}<br><br>
+	{% endfor %}
+{% endif %}
+<br>
+{% if usr %}
+<form method='POST' action="">
+	{% csrf_token %}
+Comment: <br><textarea name = "comment" rows="3" cols="100" ></textarea>
+<input type="submit" value="Submit">
+	</form>
+{% endif %}
+<br><br>
+<form action="main_page.html">
+    <button type="submit" >Back to main page</button>
+</form>
+</body>
+</html>

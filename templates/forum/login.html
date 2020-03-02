@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Forum</title>
+</head>
+<body>
+<h1>Login</h1><br>
+<form method='POST' action="">
+	{% csrf_token %}
+   User:
+  <input type="text" name="username">
+  <br>
+  Pass:
+  <input type="password" name="password">
+  <br><br>
+  <button type="submit" name="login">Submit</button>
+</form>
+<br>
+
+
+{% if error_login %}
+	Username or password invalid!
+{% endif %}
+
+</body>
+</html>
